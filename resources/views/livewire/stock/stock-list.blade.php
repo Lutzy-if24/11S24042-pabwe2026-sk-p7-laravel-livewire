@@ -103,7 +103,7 @@
                                         </a>
                                     </h2>
                                     @if ($stock->sku)
-                                        <span class="text-xs font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+                                        <span class="text-xs font-mono text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded">
                                             {{ $stock->sku }}
                                         </span>
                                     @endif

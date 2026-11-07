@@ -187,7 +187,7 @@
                             {{ $stock->name }}
                         </h1>
                         @if ($stock->sku)
-                            <p class="text-sm font-mono text-slate-500 mt-1">SKU: {{ $stock->sku }}</p>
+                            <p class="text-sm font-mono text-slate-600 mt-1">SKU: {{ $stock->sku }}</p>
                         @endif
                     </div>
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border {{ $stock->status->badgeClass() }}">
