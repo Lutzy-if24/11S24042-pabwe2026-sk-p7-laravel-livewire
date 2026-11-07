@@ -23,7 +23,7 @@
                     <div class="flex justify-between h-16">
                         <div class="flex items-center space-x-8">
                             <a href="{{ auth()->user()->isAdmin() ? route('admin.users') : route('stocks.index') }}" class="flex items-center space-x-2 font-bold text-xl tracking-tight">
-                                <svg class="w-7 h-7 text-indigo-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-7 h-7 text-indigo-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                                 </svg>
                                 <span>Stock</span>
@@ -55,7 +55,7 @@
                                 @endif
                                 <div class="hidden md:block text-left">
                                     <p class="text-sm font-medium leading-none">{{ auth()->user()->name }}</p>
-                                    <p class="text-xs text-indigo-200 mt-0.5">
+                                    <p class="text-xs text-indigo-100 mt-0.5">
                                         {{ '@' . auth()->user()->username }} 
                                         <span class="ml-1 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold {{ auth()->user()->isAdmin() ? 'bg-purple-200 text-purple-900' : 'bg-indigo-800 text-indigo-100' }}">
                                             {{ auth()->user()->role }}

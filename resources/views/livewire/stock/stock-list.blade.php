@@ -36,7 +36,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l4-4m0 0l4 4m-4-4v12" />
                 </svg>
                 Import Excel
-                <input type="file" wire:model="excelFile" wire:change="importExcel" class="hidden" accept=".xlsx, .xls">
+              <input type="file" id="import-excel" aria-label="Impor file Excel" wire:model="excelFile" wire:change="importExcel" class="hidden" accept=".xlsx, .xls">
             </label>
 
             <!-- Add Stock Button -->
@@ -56,7 +56,7 @@
     <!-- Filters & Search -->
     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm mb-6 flex flex-col md:flex-row gap-4 justify-between items-center">
         <div class="w-full md:w-96 relative">
-            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-600">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
@@ -97,11 +97,11 @@
                         <div>
                             <div class="flex items-start justify-between gap-2 mb-2">
                                 <div>
-                                    <h3 class="font-semibold text-slate-900 text-base leading-snug">
+                                    <h2 class="font-semibold text-slate-900 text-base leading-snug">
                                         <a href="{{ route('stocks.show', $stock->id) }}" class="hover:text-indigo-600 transition">
                                             {{ $stock->name }}
                                         </a>
-                                    </h3>
+                                    </h2>
                                     @if ($stock->sku)
                                         <span class="text-xs font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
                                             {{ $stock->sku }}
@@ -118,7 +118,7 @@
                                 <div>
                                     <span class="text-slate-500">Jumlah:</span>
                                     <span class="font-bold text-slate-900 ml-1">{{ $stock->quantity }} {{ $stock->unit }}</span>
-                                    <span class="text-slate-400 ml-1">(Min: {{ $stock->min_stock }})</span>
+                                    <span class="text-slate-600 ml-1">(Min: {{ $stock->min_stock }})</span>
                                 </div>
                                 @if ($stock->price !== null)
                                     <div>
@@ -133,7 +133,7 @@
                                     {{ Str::limit(strip_tags(\Illuminate\Support\Str::markdown($stock->description)), 120) }}
                                 </p>
                             @else
-                                <p class="text-sm text-slate-400 italic mb-4">Tidak ada deskripsi</p>
+                                <p class="text-sm text-slate-600 italic mb-4">Tidak ada deskripsi</p>
                             @endif
                         </div>
 
@@ -219,7 +219,7 @@
                     <h3 class="text-lg font-semibold text-slate-900">
                         {{ $editingStockId ? 'Ubah Stok Barang' : 'Tambah Stok Barang Baru' }}
                     </h3>
-                    <button wire:click="closeModal" class="text-slate-400 hover:text-slate-500">
+                    <button wire:click="closeModal" class="text-slate-600 hover:text-slate-500">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -321,6 +321,7 @@
                         <input 
                             type="file" 
                             id="stock-cover" 
+                            aria-label="Unggah cover stok"
                             wire:model="coverImage" 
                             accept="image/*"
                             class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
@@ -367,7 +368,7 @@
                         </div>
                         <h3 class="text-lg font-semibold text-slate-900">Generate Stok dengan AI</h3>
                     </div>
-                    <button wire:click="closeAiModal" class="text-slate-400 hover:text-slate-500">
+                    <button wire:click="closeAiModal" class="text-slate-600 hover:text-slate-500">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>

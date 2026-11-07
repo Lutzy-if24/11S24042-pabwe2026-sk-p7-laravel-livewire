@@ -43,9 +43,9 @@
                         <div>
                             <div class="flex items-start justify-between gap-2 mb-2">
                                 <div>
-                                    <h3 class="font-semibold text-slate-900 text-base leading-snug">
+                                    <h2 class="font-semibold text-slate-900 text-base leading-snug">
                                         {{ $stock->name }}
-                                    </h3>
+                                    </h2>
                                     @if ($stock->sku)
                                         <span class="text-xs font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
                                             {{ $stock->sku }}
@@ -62,7 +62,7 @@
                                 <div>
                                     <span class="text-slate-500">Jumlah:</span>
                                     <span class="font-bold text-slate-900 ml-1">{{ $stock->quantity }} {{ $stock->unit }}</span>
-                                    <span class="text-slate-400 ml-1">(Min: {{ $stock->min_stock }})</span>
+                                    <span class="text-slate-600 ml-1">(Min: {{ $stock->min_stock }})</span>
                                 </div>
                                 @if ($stock->price !== null)
                                     <div>
@@ -77,11 +77,11 @@
                                     {!! \Illuminate\Support\Str::markdown($stock->description) !!}
                                 </div>
                             @else
-                                <p class="text-sm text-slate-400 italic mt-2">Tidak ada deskripsi</p>
+                                <p class="text-sm text-slate-600 italic mt-2">Tidak ada deskripsi</p>
                             @endif
                         </div>
 
-                        <div class="pt-4 mt-4 border-t border-slate-100 text-xs text-slate-400">
+                        <div class="pt-4 mt-4 border-t border-slate-100 text-xs text-slate-600">
                             Dibuat: {{ $stock->created_at->format('d M Y, H:i') }}
                         </div>
                     </div>

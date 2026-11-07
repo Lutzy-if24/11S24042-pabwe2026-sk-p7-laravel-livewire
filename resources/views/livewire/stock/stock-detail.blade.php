@@ -148,6 +148,7 @@
                         <input 
                             type="file" 
                             id="detail-cover"
+                            aria-label="Unggah cover stok"
                             wire:model="newCoverImage" 
                             accept="image/*"
                             class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
@@ -218,7 +219,7 @@
                     </div>
                 </div>
 
-                <div class="text-xs text-slate-400 mb-8 flex items-center space-x-4">
+                <div class="text-xs text-slate-600 mb-8 flex items-center space-x-4">
                     <span>Dibuat: {{ $stock->created_at->format('d M Y, H:i') }}</span>
                     <span>•</span>
                     <span>Diperbarui: {{ $stock->updated_at->format('d M Y, H:i') }}</span>
@@ -228,7 +229,7 @@
                     @if ($stock->description)
                         {!! \Illuminate\Support\Str::markdown($stock->description) !!}
                     @else
-                        <p class="text-slate-400 italic">Tidak ada deskripsi yang ditambahkan untuk stok barang ini.</p>
+                        <p class="text-slate-600 italic">Tidak ada deskripsi yang ditambahkan untuk stok barang ini.</p>
                     @endif
                 </div>
             @endif
